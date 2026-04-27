@@ -55,13 +55,19 @@ def main():
     drive = auth_gdrive()
     file_name = f"{platform}_{uuid.uuid4().hex[:6]}.md"
     
-    file = drive.CreateFile({
+    file_metadata = {
         'title': file_name,
         'parents': [{'id': FOLDER_ID}],
         'mimeType': 'text/markdown'
-    })
+    }
+    
+    file = drive.CreateFile(file_metadata)
     file.SetContentString(markdown_text)
-    file.Upload()
+    
+    # --- 关键修改点 ---
+    # 增加 supportsAllDrives 参数，确保在共享空间内正常操作
+    file.Upload(param={'supportsAllDrives': True}) 
+    
     print(f"✅ 成功! 文件已同步至云端: {file_name}")
 
 if __name__ == "__main__":
