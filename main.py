@@ -7,7 +7,7 @@ from pydrive2.drive import GoogleDrive
 from oauth2client.service_account import ServiceAccountCredentials
 
 # --- 1. 基础配置 ---
-FOLDER_ID = '这里填入你共享的GoogleDrive文件夹URL末尾的ID'
+FOLDER_ID = '1XJbuZw8M2q-7hf1hZShvRLD2UpleNSkT'
 
 # --- 2. 授权 Google Drive ---
 def auth_gdrive():
