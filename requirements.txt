@@ -1,0 +1,6 @@
+yt-dlp
+pydrive2
+oauth2client
+easyocr
+beautifulsoup4
+requests
