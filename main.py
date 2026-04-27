@@ -66,7 +66,7 @@ def main():
     
     # --- 关键修改点 ---
     # 增加 supportsAllDrives 参数，确保在共享空间内正常操作
-    file.Upload(param={'supportsAllDrives': True}) 
+    file.Upload(param={'supportsAllDrives': True, 'uploadType': 'multipart'}) 
     
     print(f"✅ 成功! 文件已同步至云端: {file_name}")
 
